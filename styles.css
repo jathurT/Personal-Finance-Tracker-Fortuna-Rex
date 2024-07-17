@@ -1,0 +1,510 @@
+/* ----------------------------------BODY CSS---------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f6e8d6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/*--------------------------------------------------------- END ---------------------------------------------*/
+/*--------------------------------------------------------- NavBAR CSS ------------------------------------*/
+header {
+  position: fixed;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 64px;
+  font-size: 16px;
+  position: relative;
+}
+
+header h1 {
+  color: #417156;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 1px;
+  margin-right: 0;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu button {
+  display: none;
+}
+
+.menu-list {
+  color: #417156;
+  list-style: none;
+  display: flex;
+}
+
+.menu-list li {
+  display: inline-block;
+  margin-left: 32px;
+  font-size: 1.25em;
+  cursor: pointer;
+  transition: color 0.3s;
+  letter-spacing: 1px;
+}
+.menu-list li a {
+  text-decoration: none;
+  color: #417156;
+}
+.menu-list li a:hover {
+  color: #875c62;
+}
+
+.menu-list li.active,
+.menu-list li:hover {
+  color: #875c62;
+  transform: scale(1.2);
+}
+
+/* ---------------------------------------------------------NavBar CSS END--------------------------------------------- */
+/* back to top */
+.back-to-top {
+  position: fixed;
+  width: 64px;
+  height: 64px;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.85);
+
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.5) translate3d(0, 50px, 0);
+  transform-origin: 50% 100%;
+  transition: border-color 300ms ease-out, opacity 200ms ease-out,
+    transform 200ms ease-out;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.back-to-top:hover {
+  border: 1px solid #417156;
+}
+.back-to-top:hover:before {
+  transform: translate3d(0, -2px, 0) rotate(-45deg);
+}
+.back-to-top:hover:after {
+  transform: translate3d(0, -2px, 0) rotate(45deg);
+}
+.back-to-top:before,
+.back-to-top:after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 30px;
+  width: 24px;
+  border-top: 2px solid #868686;
+  transition: transform 175ms ease-out;
+}
+.back-to-top:before {
+  left: 12px;
+  transform: rotate(-45deg);
+}
+.back-to-top:after {
+  left: 28px;
+  transform: rotate(45deg);
+}
+.back-to-top.ks-appear {
+  opacity: 1;
+  transform: scale(1) translate3d(0, 0, 0);
+}
+
+/* ---------------------------------------------------------HERO SECTION CSS --------------------------------------------*/
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.right img {
+  width: 100%;
+  max-height: 600px;
+}
+
+.left {
+  max-width: 50%;
+  padding: 40px 64px;
+}
+
+.right {
+  padding: 40px 48px;
+  max-width: 50%;
+  max-height: 100%;
+}
+
+.title {
+  color: #875c62;
+  font-size: 2.5em;
+  width: 75%;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 48px;
+}
+
+.msg {
+  color: #649265;
+  font-size: 1.1em;
+  letter-spacing: 1.2px;
+  line-height: 32px;
+  margin-bottom: 48px;
+}
+
+button.cta {
+  border: none;
+  outline: none;
+  background-color: #71be4a;
+  color: #fff;
+  padding: 18px 32px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-radius: 30px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1), 0 15px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: opacity 0.9;
+}
+
+button.cta:hover {
+  opacity: 0.9;
+}
+/*------------------------------------------------------------- HERO SECTION CSS END -----------------------------------------------------*/
+/*------------------------------------------------------------- ABOUT SECTION CSS --------------------------------------------------------*/
+
+.about {  
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+
+.aleft img {
+  width: 100%;
+  padding-left: 1rem;
+  height: 350px;
+}
+
+.aright {
+  text-align: right;
+  max-width: calc(50% - 20px);
+  padding: 10px;
+  flex: 1;
+}
+.aright h1 {
+  text-align: left;
+  color: #417156;
+  font-size: 2.5em;
+  width: 85%;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 48px;
+}
+.aright p {
+  flex: 1;
+  text-align: left;
+  color: #649265;
+  font-size: 1.1em;
+  letter-spacing: 0.7px;
+  line-height: 32px;
+  margin-bottom: 48px;
+  width: 85%;
+  padding-right: 1rem;
+}
+.aleft {
+  padding: 40px 48px;
+  max-width: 50%;
+}
+
+/*-------------------------------------------------------- ABOUT SECTION CSS END --------------------------------------------------*/
+
+/*-------------------------------------------------------- FAQ SECTION CSS --------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+
+.wrapper {
+  width: 60%;
+}
+.faq {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.faq h1 {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  color: #417156;
+  font-size: 2.5em;
+  width: 85%;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.container {
+  background-color: #f5f5f5;
+  color: black;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.25);
+  margin-bottom: 50px;
+}
+
+.question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 20px 80px 20px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.question::after {
+  content: "\002B";
+  font-size: 2.2rem;
+  position: absolute;
+  right: 20px;
+  transition: 0.2s;
+}
+
+.question.active::after {
+  transform: rotate(45deg);
+}
+
+.answercont {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.answer {
+  border-top: 1px solid #9fb5cc;
+  color: #9fb5cc;
+  padding: 20px 20px 20px 20px;
+  line-height: 1.5rem;
+}
+
+/*-------------------------------------------------------- FAQ SECTION CSS END --------------------------------------------------------*/
+/*--------------------------------------------------------- FOOTER SECTION CSS --------------------------------------------------------*/
+
+footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.foot {
+  width: 100%;
+  background-color: #875c62;
+
+  text-align: center;
+  padding: 20px 0;
+}
+
+.foot p {
+  color: #fff;
+  margin: 0;
+}
+
+/*--------------------------------------------------------- FOOTER SECTION CSS END--------------------------------------------------------*/
+
+/*  -----    RESPONSIVENESS    -----  */
+@media (max-width: 800px) {
+  header,
+  .left,
+  .right {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 650px) {
+  html {
+    font-size: 14px;
+  }
+
+  /* ------nav bar-------- */
+
+  .menu button {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: #711def;
+    outline: none;
+    font-size: 1.7em;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .menu i.fa-times,
+  .menu.opened i.fa-bars {
+    display: none;
+  }
+
+  .menu.opened i.fa-times,
+  .menu i.fa-bars {
+    display: block;
+    animation: enter 0.8s;
+  }
+
+  @keyframes enter {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+ 
+  .menu-list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background-color: #711def;
+    font-size: 1rem;
+    padding: 46px;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 80px;
+    transform: translateX(100%);
+    transition: transform 0.5s;
+    opacity: 0.8;
+  }
+
+  .menu-list li {
+    font-size: 1.7em;
+    margin: 32px 0px;
+  }
+  .menu-list li a {
+    text-decoration: none;
+    color: #f5f5f5;
+  }
+  .menu-list li a:hover {
+    color: #ff5360;
+  }
+
+  .menu.opened .menu-list {
+    transform: translateX(0);
+  }
+
+  .menu.opened button {
+    color: #fff;
+  }
+  /* ------nav bar end---- */
+  /*-------hero section----*/
+  .main {
+    flex-direction: column-reverse;
+  }
+  .title {
+    font-size: 1.3em;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left {
+    font-size: 0.8em;
+  }
+
+  .left * {
+    width: 95%;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  button.cta {
+    max-width: 60%;
+  }
+
+  .right img {
+    padding-top: 24px;
+    width: 80%;
+  }
+
+  /*-------hero section end---- */
+  /*--------- about------------  */
+  .about {
+    flex-direction: column;
+  }
+  .aleft,
+  .aright {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .aright h1 {
+    text-align: center;
+    color: #ff5360;
+    font-size: 1.5em;
+    width: 85%;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 48px;
+  }
+  .aright p {
+    text-align: center;
+    color: #649265;
+    font-size: 0.8em;
+    letter-spacing: 0.7px;
+    line-height: 32px;
+    margin-bottom: 24px;
+    width: 85%;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  /*--------- about end------------  */
+  /*--------- FAQ------------  */
+  .wrapper {
+    width: 80%;
+  }
+  .faq h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.7px;
+  }
+  .answer {
+    font-size: 0.8rem;
+    letter-spacing: 0.7px;
+  }
+
+  .question {
+    text-align: left;
+    font-size: 1rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 35px;
+  }
+  /*--------- FAQ end------------  */
+  /*--------- footer------------  */
+  /*--------- footer end------------  */
+}

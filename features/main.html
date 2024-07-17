@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <h1>Fortuna Rex</h1>
+
+      <ul>
+        <li class="active">
+          <a href="./main.html">
+            <i class="fa-solid fa-chart-column"></i>
+            <span class="dash">Dashboard</span>
+          </a>
+        </li>
+        <li class="inactive">
+          <a href="./bill.html">
+            <i class="fa-regular fa-file-lines"></i>
+            <span class="report">Bills</span>
+          </a>
+        </li>
+        <li class="inactive">
+          <a href="./save.html">
+            <i class="fa-solid fa-piggy-bank"></i>
+
+            <span class="analyise"> Savings</span>
+          </a>
+        </li>
+        <li class="inactive">
+          <a href="./expense.html">
+            <i class="fa-solid fa-credit-card"></i>
+            <span class="set">Expenses</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <nav>
+        <p>
+          <span class="lout"
+            ><a href="../index.html"
+              ><i
+                class="fa-sharp fa-solid fa-right-from-bracket fa-rotate-180 fa-lg"
+              ></i></a
+          ></span>
+        </p>
+
+        <div class="profile-img">
+          <img src="/COIN/images/6.png" alt="profile img" />
+        </div>
+      </nav>
+
+      <!--  Main heading  -->
+      <div class="container">
+        <header>
+          <h1>Welcome back, User Name</h1>
+          <br />
+          <span>Get an overview of your finance</span>
+        </header>
+      </div>
+      <div class="cards-container">
+        <div class="card card1">
+          <div id="chart-1">
+            <h2>Account Information</h2>
+            <br />
+            <h4>Name : <span class="name">User Name</span></h4>
+            <br />
+
+            <h4>Profession : <span class="role">Role</span></h4>
+            <br />
+            <h4>Email : <span class="mail">example@outlook.com</span></h4>
+            <br />
+            <h4>Sex : <span class="sex">M/F</span></h4>
+          </div>
+        </div>
+
+        <div class="card card2">
+          <div id="chart-2">
+            <h2>Finance Information</h2>
+            <br />
+
+            <h4>Income : <span class="mail">XXXXXXX</span></h4>
+            <br />
+            <h4>Balance : <span class="train">XXXXXX</span></h4>
+            <br />
+            <h4>Savings : <span class="enrll">XXXXXX</span></h4>
+            <br />
+            <h4>Expenditure : <span class="role">XXXXXX</span></h4>
+          </div>
+        </div>
+        <div class="card card0">
+          <div id="chart-0"></div>
+        </div>
+
+        <div class="card card4">
+          <div id="chart-4"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

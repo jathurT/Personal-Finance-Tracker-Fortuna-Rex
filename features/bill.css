@@ -1,0 +1,110 @@
+.bugtack {
+  text-align: center;
+  color: #ff5360;
+}
+.budget-tracker {
+  margin: 1.5rem auto;
+  width: 850px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.budget-tracker * {
+  font-family: sans-serif;
+}
+
+.budget-tracker th {
+  gap: 40px;
+  text-align: center;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.budget-tracker td {
+  padding: 5px;
+}
+
+.input,
+.delete-entry {
+  height: 30px;
+  font-size: 13px;
+  padding: 0 10px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: none;
+}
+.input,
+.delete-entry:focus {
+  outline: none;
+  transform: scale(1.07);
+}
+
+input[type="number"] {
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+input[type="number"]:focus {
+  outline: none;
+  transform: scale(1.07);
+}
+
+.delete-entry {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  background: none;
+  color: red;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+.delete-entry:hover {
+  background: rgba(255, 0, 0, 0.1);
+}
+
+button {
+  margin-top: 10px;
+  background: #050505;
+  border-radius: 999px;
+
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji",
+    NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
+    EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+button:hover {
+  background: #1f6421;
+}
+.controls,
+.summary {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}

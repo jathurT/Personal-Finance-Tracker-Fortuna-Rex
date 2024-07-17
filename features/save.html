@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dashboard</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;0,900;1,600&display=swap");
+
+    /* ------- Global style ------- */
+    :root {
+      --darkblue: #faf3e9;
+      --lightcolor: #417156;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+      scrollbar-width: thin;
+      scrollbar-color: #0C0175 var(--darkblue);
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: #F5F5F5;
+
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    a {
+      color: var(--lightcolor);
+      text-decoration: none;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    /* ------- Sidebar style ------- */
+
+    .sidebar {
+      position: fixed;
+      width: 250px;
+      height: 100vh;
+      background-color: var(--darkblue);
+      color: #417156;
+      border-right: 1px solid #e0e0e0;
+    }
+
+    .sidebar h1 {
+      color: #213f2e;
+      text-transform: uppercase;
+      font-size: 1.8em;
+      letter-spacing: 1px;
+      padding-bottom: 2rem;
+      padding-top: 2rem;
+      padding-left: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      border-bottom: 1px solid #e0e0e0;
+
+    }
+
+
+    .sidebar ul {
+      margin-top: 50px;
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      padding: 16px 10px;
+      margin: 16px;
+      border-radius: 5px;
+    }
+
+    .sidebar ul li a {
+      color: currentColor;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar ul li a i {
+      width: 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sidebar ul li.active {
+      background-color: var(--lightcolor);
+      color: var(--darkblue);
+    }
+
+    .sidebar ul li:hover {
+      background-color: #1f6421;
+      color: #F5F5F5;
+    }
+
+    /* ------- Content style ------- */
+    .content {
+      position: fixed;
+      right: 0;
+      width: calc(100% - 250px);
+      height: 100%;
+      min-height: 100vh;
+      background-color: var(-lightcolor);
+      overflow: hidden auto;
+      color: #875c52;
+
+    }
+
+    nav {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      height: 70px;
+      padding: 0 20px;
+      gap: 30px;
+    }
+
+    nav p {
+      display: flex;
+      gap: 10px;
+    }
+
+    nav .notification {
+      position: relative;
+    }
+
+    nav .notification i {
+      font-size: 1.3rem;
+    }
+
+    nav .notification .badge {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      position: absolute;
+      top: -6px;
+      left: 10px;
+      background-color: #f00;
+      color: var(--lightcolor);
+      font-size: 10px;
+      text-align: center;
+      line-height: 16px;
+    }
+
+    nav .profile-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    nav .profile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    header {
+      color: #ff5360;
+      padding-top: .7rem;
+      font-family: 'Montserrat', sans-serif;
+
+    }
+
+    header span {
+      color: #9fb5cc;
+    }
+
+    .lout:hover {
+      transform: scale(1.5);
+      color: #ff5360;
+    }
+
+    .container {
+
+      display: flex;
+      flex-wrap: wrap;
+      font-family: "Montserrat", sans-serif;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .block {
+      padding-top: 20px;
+
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+
+      margin: 10px;
+      border: 1px solid #fff;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border-radius: 20px;
+    }
+
+    .block.di {
+      text-align: center;
+      height: 90px;
+    }
+
+    .block p {
+      padding-top: 10px;
+      padding-bottom: 1rem;
+      color: #ff5360;
+    }
+
+    .block.re {
+
+      width: 60px;
+    }
+
+
+    input[type="number"] {
+      margin-top: 10px;
+      ;
+      padding: 5px;
+      border-radius: 5px;
+      width: 100%;
+      margin-bottom: 10px;
+      text-align: center;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+
+    input[type="number"]:focus {
+      outline: none;
+      transform: scale(1.07);
+
+    }
+
+
+
+
+    button {
+
+
+      display: block;
+      margin-top: 10px;
+      background: #050505;
+      border-radius: 999px;
+
+      box-sizing: border-box;
+      color: #FFFFFF;
+      cursor: pointer;
+      font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      opacity: 1;
+      outline: 0 solid transparent;
+      padding: 8px 18px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: fit-content;
+      word-break: break-word;
+      border: 0;
+    }
+
+    button:hover {
+      background: #1F6421;
+    }
+
+    .list {
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+    }
+
+    .savtitle {
+      color: #ff5360;
+      font-size: 2rem;
+      padding-bottom: 1rem;
+      text-align: center;
+
+
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+  <div class="sidebar">
+
+    <h1>Fortuna Rex</h1>
+
+
+    <ul>
+      <li class='inactive'>
+        <a href="./main.html">
+          <i class="fa-solid fa-chart-column"></i>
+          <span class="dash">Dashboard</span>
+        </a>
+      </li>
+      <li class='inactive'>
+        <a href="./bill.html">
+          <i class="fa-regular fa-file-lines"></i>
+          <span class="report">Bills</span>
+        </a>
+      </li>
+      <li class='active'>
+        <a href="./save.html">
+          <i class="fa-solid fa-piggy-bank"></i>
+
+          <span class="analyise">
+            Savings</span>
+        </a>
+      </li>
+      <li class='inactive'>
+        <a href="./expense.html">
+          <i class="fa-solid fa-credit-card"></i>
+          <span class="set">Expenses</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <nav>
+      <p>
+      
+        <span class="lout"><a href="../index.html"><i class="fa-sharp fa-solid fa-right-from-bracket fa-rotate-180 fa-lg"></i></a></span>
+      </p>
+   
+
+      <div class="profile-img">
+        <img src="/COIN/images/6.png" alt="profile img">
+      </div>
+    </nav>
+
+    <!--  Main heading  -->
+    <h1 class="savtitle"> SAVINGS</h1>
+    <div class="container">
+      <div class="block di">
+        <h2>Set Goal Amount</h2>
+        <p id="goalAmount"></p>
+      </div>
+
+      <div class="block di ">
+        <h2>Saving Progress</h2>
+        <p id="progress">0</p>
+      </div>
+
+      <div class="block di">
+        <h2>Remaining Amount</h2>
+        <p id="remaining"></p>
+      </div>
+
+
+    </div>
+
+
+    <div class="list">
+      <div class="block">
+        <h2>Saving History</h2>
+        <ul id="addedNumbers"></ul>
+      </div>
+    </div>
+
+
+
+    <div class="container">
+      <div class="block">
+        <h2>Add to Savings</h2>
+        <label for="amount">Enter amount to add:</label>
+        <input type="number" id="amount" placeholder="Enter Amount">
+        <button onclick="addToSavings()">Add</button>
+      </div>
+
+      <div class="block">
+        <h2>Set Saving Goal</h2>
+        <label for="goal">Enter your saving goal:</label>
+        <input type="number" id="goal" placeholder="Enter Amount">
+        <button onclick="setGoal()">Set Goal</button>
+      </div>
+
+    </div>
+    <div class="container">
+
+
+      <button onclick="resetValues()">Reset</button>
+
+    </div>
+
+
+
+
+    <script>
+      let savingGoal = 0;
+      let currentProgress = 0;
+      let addedNumbers = []; // Array to store added numbers
+
+      // Load saved values from local storage
+      window.addEventListener('load', function () {
+        const savedGoal = localStorage.getItem('savingGoal');
+        const savedProgress = localStorage.getItem('currentProgress');
+        const savedNumbers = localStorage.getItem('addedNumbers');
+
+        if (savedGoal !== null) {
+          savingGoal = parseInt(savedGoal);
+        }
+
+        if (savedProgress !== null) {
+          currentProgress = parseInt(savedProgress);
+        }
+
+        if (savedNumbers !== null) {
+          addedNumbers = JSON.parse(savedNumbers);
+          updateAddedNumbers(); // Call the function to update the added numbers list
+        }
+
+        updateProgress();
+        updateRemaining();
+        updateGoalAmount();
+      });
+
+      function setGoal() {
+        const goalInput = document.getElementById("goal");
+        savingGoal = parseInt(goalInput.value);
+        goalInput.value = "";
+
+        // Save the goal to local storage
+        localStorage.setItem('savingGoal', savingGoal.toString());
+
+        updateProgress();
+        updateRemaining();
+        updateGoalAmount();
+      }
+
+      function addToSavings() {
+        const amountInput = document.getElementById("amount");
+        const amount = parseInt(amountInput.value);
+        currentProgress += amount;
+        amountInput.value = "";
+
+        // Save the progress to local storage
+        localStorage.setItem('currentProgress', currentProgress.toString());
+
+        // Add the number to the array
+        addedNumbers.push(amount);
+        localStorage.setItem('addedNumbers', JSON.stringify(addedNumbers));
+
+        updateProgress();
+        updateRemaining();
+        updateAddedNumbers(); // Call the function to update the added numbers list
+      }
+
+      function updateProgress() {
+        const progressElement = document.getElementById("progress");
+        progressElement.textContent = currentProgress;
+      }
+
+      function updateRemaining() {
+        const remainingElement = document.getElementById("remaining");
+        const remainingAmount = savingGoal - currentProgress;
+
+        if (remainingAmount > 0) {
+          remainingElement.textContent = remainingAmount;
+        } else {
+          remainingElement.textContent = "Goal Reached";
+        }
+      }
+
+      function updateGoalAmount() {
+        const goalAmountElement = document.getElementById("goalAmount");
+        goalAmountElement.textContent = savingGoal;
+      }
+
+      function updateAddedNumbers() {
+        const addedNumbersElement = document.getElementById("addedNumbers");
+        addedNumbersElement.innerHTML = ""; // Clear the existing list
+
+        // Iterate over the addedNumbers array and create list items
+        for (let i = 0; i < addedNumbers.length; i++) {
+          const listItem = document.createElement("li");
+          listItem.textContent = addedNumbers[i];
+          addedNumbersElement.appendChild(listItem);
+        }
+      }
+
+      function resetValues() {
+        savingGoal = 0;
+        currentProgress = 0;
+        addedNumbers = []; // Clear the addedNumbers array
+
+        // Clear the local storage
+        localStorage.removeItem('savingGoal');
+        localStorage.removeItem('currentProgress');
+        localStorage.removeItem('addedNumbers');
+
+        updateProgress();
+        updateRemaining();
+        updateGoalAmount();
+        updateAddedNumbers(); // Call the function to update the added numbers list
+      }
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
